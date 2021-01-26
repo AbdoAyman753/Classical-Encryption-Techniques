@@ -71,28 +71,29 @@ public class PlayfairCipher {
 
     }
 
-    private String format(String old_text) {
-        int i = false;
-        int len = false;
+     private String format(String old_text)
+    {
+        int i = 0;
+        int len = 0;
         String text = new String();
-        int len = old_text.length();
-
-        for(int tmp = 0; tmp < len; ++tmp) {
-            if (old_text.charAt(tmp) == 'j') {
+        len = old_text.length();
+        for (int tmp = 0; tmp < len; tmp++)
+        {
+            if (old_text.charAt(tmp) == 'j')
+            {
                 text = text + 'i';
-            } else {
-                text = text + old_text.charAt(tmp);
             }
+            else
+                text = text + old_text.charAt(tmp);
         }
-
         len = text.length();
-
-        for(int i = 0; i < len; i += 2) {
-            if (text.charAt(i + 1) == text.charAt(i)) {
+        for (i = 0; i < len; i = i + 2)
+        {
+            if (text.charAt(i + 1) == text.charAt(i))
+            {
                 text = text.substring(0, i + 1) + 'x' + text.substring(i + 1);
             }
         }
-
         return text;
     }
 
